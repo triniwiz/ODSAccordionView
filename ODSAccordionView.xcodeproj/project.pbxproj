@@ -12,7 +12,6 @@
 		6289874119505F2800C78D50 /* ODSAccordionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6289873F19505F2800C78D50 /* ODSAccordionView.m */; };
 		628987471950773D00C78D50 /* ODSAccordionSectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 628987461950773D00C78D50 /* ODSAccordionSectionView.m */; };
 		62BAE4CF1950573F00105BF4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 62BAE4CB1950573F00105BF4 /* InfoPlist.strings */; };
-		62BAE4D01950573F00105BF4 /* ODSAccordionViewTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62BAE4CD1950573F00105BF4 /* ODSAccordionViewTests-Info.plist */; };
 		62BAE4D11950573F00105BF4 /* ODSAccordionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BAE4CE1950573F00105BF4 /* ODSAccordionViewTests.m */; };
 		62DB0B8C195056AB000E8614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B8B195056AB000E8614 /* Foundation.framework */; };
 		62DB0B9A195056AB000E8614 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DB0B99195056AB000E8614 /* XCTest.framework */; };
@@ -209,7 +208,7 @@
 		62DB0B80195056AB000E8614 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Johannes W. Seitz";
 			};
 			buildConfigurationList = 62DB0B83195056AB000E8614 /* Build configuration list for PBXProject "ODSAccordionView" */;
@@ -235,7 +234,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BAE4D01950573F00105BF4 /* ODSAccordionViewTests-Info.plist in Resources */,
 				62BAE4CF1950573F00105BF4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,12 +329,18 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -349,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -368,19 +372,24 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -426,6 +435,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "Tests/ODSAccordionViewTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.ods-marketing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -443,6 +453,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classes/ODSAccordionView-Prefix.pch";
 				INFOPLIST_FILE = "Tests/ODSAccordionViewTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.ods-marketing.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = xctest;
 			};

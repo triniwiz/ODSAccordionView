@@ -29,11 +29,44 @@ Requires iOS 7 or above
 ODSAccordionView is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
-    pod "ODSAccordionView"
+pod "ODSAccordionView"
 
-## Author
 
-Johannes Seitz, http://www.craftware.de 
+## Usage
+
+```
+ODSAccordionSectionStyle *style = [[ODSAccordionSectionStyle alloc] init];
+    style.arrowColor = lightBlue;
+    style.headerStyle = ODSAccordionHeaderStyleLabelLeft;
+    style.headerTitleLabelFont = [UIFont systemFontOfSize:15];
+    style.backgroundColor = blue;
+    style.headerBackgroundColor = darkBlue;
+    style.dividerColor = [UIColor lightGrayColor];
+    style.headerHeight = 40;
+    style.stickyHeaders = YES;
+    style.animationDuration = 0.2;
+    style.arrowHeight = 1;
+
+    NSArray *sections = @[
+                          [[ODSAccordionSection alloc] initWithTitle:@"Text"
+                                                             andView: [self textView]],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Cat content"
+                                                             andView: [self imageView] collapse:NO],
+                          [[ODSAccordionSection alloc] initWithTitle:@"Web content"
+                                                             andView: [self webView]]
+                         ];
+    _accordionView = [[ODSAccordionView alloc] initWithSections:sections andSectionStyle:style];
+    _accordionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
+    self.view = _accordionView;
+    self.view.backgroundColor = lightBlue;
+    [_accordionView addSection:[[ODSAccordionSectionView alloc]initWithTitle:@"New Section" andView:self.newView sectionStyle:style]];
+```
+
+
+## Authors
+
+* Johannes Seitz, http://www.craftware.de 
+
 
 ## License
 

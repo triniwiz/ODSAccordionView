@@ -9,6 +9,7 @@
 #import "ODSExampleViewController.h"
 #import "ODSAccordionView.h"
 #import "ODSAccordionSectionStyle.h"
+#import "ODSAccordionSectionView.h"
 
 @interface ODSExampleViewController ()
 
@@ -109,6 +110,7 @@
     _accordionView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
     self.view = _accordionView;
     self.view.backgroundColor = lightBlue;
+    [_accordionView addSection:[[ODSAccordionSectionView alloc]initWithTitle:@"New Section" andView:self.newView sectionStyle:style]];
 }
 
 -(void)viewDidAppear:(BOOL)animated {
@@ -120,6 +122,15 @@
     textView.frame = CGRectMake(0, 0, 0, 100);
     textView.backgroundColor = [UIColor clearColor];
     textView.text = @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.\n\n Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit.\n Donec et mollis dolor.";
+    return textView;
+    
+}
+
+-(UITextView *)newView {
+    UITextView *textView = [[UITextView alloc] init];
+    textView.frame = CGRectMake(0, 0, 0, 100);
+    textView.backgroundColor = [UIColor clearColor];
+    textView.text = @"New Setion";
     return textView;
     
 }
